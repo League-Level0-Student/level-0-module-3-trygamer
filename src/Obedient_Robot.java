@@ -12,17 +12,17 @@ public class Obedient_Robot {
 public static void main(String[] args) {
 Obedient_Robot k1= new Obedient_Robot();
 String a=JOptionPane.showInputDialog("What shape do you want? (Options:  triangle, square, or circle)");
-String c=JOptionPane.showInputDialog("What color do you want? (Options:  red, green, or yellow)");
+String c=JOptionPane.showInputDialog("What color do you want? (Options:  red, green, or blue)");
 if(c.equals("red")) {
-	
+	color= new Color(255,0,0);
 }
 	
 else if(c.equals("green")) {
-	
+	color= new Color(0,255,0);
 }
 	
 else {
-	color= new Color(255,0,0);
+	color= new Color(0,0,255);
 }
 
 if(a.equals("triangle")) {
@@ -44,8 +44,9 @@ else {
 
 void drawSquare() {
 	k.setSpeed(10);
+k.setPenColor(color);
 k.penDown();
-for(int i=0;i<3;i++ ) {
+for(int i=0;i<4;i++ ) {
 k.move(100);	
 k.turn(90);
 
@@ -57,6 +58,7 @@ k.move(100);
 
 void drawTriangle() {
 	k.setSpeed(10);
+	k.setPenColor(color);
 	k.penDown();
 	k.move(100);
 	for(int i=0;i<2;i++ ) {
@@ -71,8 +73,9 @@ k.penUp();
 
 void drawCircle() {
 	k.setSpeed(10);
+	k.setPenColor(color);
 	k.penDown();
-	k.turn(90);
+	//k.turn(90);
 for(int i=0;i<360;i++ ) {
 	k.move(1);
 	k.turn(1);
